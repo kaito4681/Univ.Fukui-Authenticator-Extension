@@ -1,0 +1,35 @@
+{
+	"manifest_version": 3,
+	"name": "福井大学専用Authenticator(非公式)",
+	"version": "1.0",
+	"permissions": [
+		"activeTab",
+		"scripting",
+		"storage",
+		"clipboardWrite",
+		"tabs"
+	],
+	"action": {
+		"default_popup": "./popup/popup.html"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"https://ufsso.cii.u-fukui.ac.jp/openam/XUI/*"
+			],
+			"js": [
+				"contents/autofill.js"
+			],
+			"run_at": "document_end"
+		},
+		{
+			"matches": [
+				"https://ufidp-t.cii.u-fukui.ac.jp/idp/profile/SAML2/*"
+			],
+			"js": [
+				"contents/autofill.js"
+			],
+			"run_at": "document_end"
+		}
+	]
+}

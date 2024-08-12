@@ -39,7 +39,8 @@ module.exports = {
 				{ from: 'src/popup/popup.css', to: 'popup/' },
 				{ from: 'src/reset/reset.html', to: 'reset/' },
 				{ from: 'src/reset/reset.js', to: 'reset/' },
-				{ from: 'src/setting/setting.html', to: 'setting/' }
+				{ from: 'src/setting/setting.html', to: 'setting/' },
+				{ from: 'src/contents/autoAgree.js', to: 'contents/' }
 			]
 		})
 	]

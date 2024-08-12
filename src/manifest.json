@@ -27,7 +27,7 @@
 				"https://ufidp-t.cii.u-fukui.ac.jp/idp/profile/SAML2/*"
 			],
 			"js": [
-				"contents/autofill.js"
+				"contents/autoAgree.js"
 			],
 			"run_at": "document_end"
 		}

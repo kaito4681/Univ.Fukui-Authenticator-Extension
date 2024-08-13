@@ -38,10 +38,11 @@ module.exports = {
 				{ from: 'src/manifest.json', to: '' },
 				{ from: 'src/popup/popup.html', to: 'popup/' },
 				{ from: 'src/popup/popup.css', to: 'popup/' },
-				{ from: 'src/reset/reset.html', to: 'reset/' },
-				{ from: 'src/reset/reset.js', to: 'reset/' },
 				{ from: 'src/setting/setting.html', to: 'setting/' },
-				{ from: 'src/contents/autoAgree.js', to: 'contents/' }
+				{ from: 'src/setting/setting.css', to: 'setting/' },
+				{ from: 'src/setting/setting.js', to: 'setting/' },
+				{ from: 'src/contents/autoAgree.js', to: 'contents/' },
+				{ from: 'src/contents/autoLogin.js', to: 'contents/' },
 			]
 		})
 	]

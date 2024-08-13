@@ -86,8 +86,9 @@ module.exports = {
 				{ from: path.resolve(__dirname, 'src/manifest.json'), to: path.resolve(__dirname, 'dist/') },
 				{ from: path.resolve(__dirname, 'src/popup/popup.html'), to: path.resolve(__dirname, 'dist/popup/') },
 				{ from: path.resolve(__dirname, 'src/popup/popup.css'), to: path.resolve(__dirname, 'dist/popup/') },
-				{ from: path.resolve(__dirname, 'src/setting/'), to: path.resolve(__dirname, 'dist/setting/'), globOptions: { dot: true } }, 
-				{ from: path.resolve(__dirname, 'src/instruction/'), to: path.resolve(__dirname, 'dist/instruction/'), globOptions: { dot: true } }, 
+				{ from: path.resolve(__dirname, 'src/setting/'), to: path.resolve(__dirname, 'dist/setting/'), globOptions: { dot: true } },
+				{ from: path.resolve(__dirname, 'src/instruction/'), to: path.resolve(__dirname, 'dist/instruction/'), globOptions: { dot: true } },
+				{ from: path.resolve(__dirname, 'src/icon/'), to: path.resolve(__dirname, 'dist/icon/'), globOptions: { dot: true, ignore: ['**/icon-original.jpg'] } },
 				{ from: path.resolve(__dirname, 'src/contents/autoAgree.js'), to: path.resolve(__dirname, 'dist/contents/') },
 				{ from: path.resolve(__dirname, 'src/contents/autoLogin.js'), to: path.resolve(__dirname, 'dist/contents/') },
 			]

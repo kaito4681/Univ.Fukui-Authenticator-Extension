@@ -4,6 +4,19 @@
 // ワンタイムパスワードを生成し、自動入力し、送信ボタンを自動で押す。
 // 
 import { TOTP } from "totp-generator"
+const WAIT_TIME = 100;  // 0.1秒
+
+async function getTOTP(key) {
+	let totp = TOTP.generate(key);
+	if (totp.expires - Date.now() < WAIT_TIME) {
+		setTimeout(() => {
+			totp = TOTP.generate(key);
+		}, WAIT_TIME);
+	}
+	return totp.otp;
+}
+
+
 
 const target = 'input#idToken1[placeholder="ワンタイムパスワードの入力"]';
 let key;
@@ -12,8 +25,8 @@ chrome.storage.sync.get(["key"]).then((result) => {
 	if (key === undefined) return;
 
 	// 要素が表示されたら実行する関数
-	const onElementFound = (element) => {
-		element.value = TOTP.generate(key).otp;
+	const onElementFound = async (element) => {
+		element.value = await getTOTP(key);
 		const button = document.getElementById("idToken2_0");
 		if (button) button.click();
 	};

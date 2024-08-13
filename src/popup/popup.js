@@ -33,14 +33,6 @@ document.getElementById("how").addEventListener("click", () => {
 	});
 });
 
-//生成キーの再設定画面へ遷移
-document.getElementById("reset").addEventListener("click", () => {
-	chrome.tabs.create({
-		url: chrome.runtime.getURL("../reset/reset.html"),
-		active: true
-	});
-});
-
 //設定画面へ遷移
 document.getElementById("setting").addEventListener("click", () => {
 	chrome.tabs.create({

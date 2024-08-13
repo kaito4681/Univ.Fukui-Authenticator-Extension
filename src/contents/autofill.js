@@ -21,11 +21,15 @@ async function autofill() {
 
 	// 要素が表示されたら実行する関数
 	const onElementFound = async (element) => {
-		let key;
-		chrome.storage.sync.get(["key"]).then((result) => {
-			key = result.key;
-		});
-		if (key === undefined) return;
+		const result = await chrome.storage.sync.get(["key"]);
+		const key = result.key;
+
+		console.log(key);
+
+		if (key === undefined) {
+			alert("キーが設定されていません。\n【福井大学専用Authenticator(非公式)】")
+			return;
+		}
 
 		element.value = await getTOTP(key);
 		const button = document.getElementById("idToken2_0");
@@ -33,12 +37,12 @@ async function autofill() {
 	};
 
 	// DOMの変更の監視
-	const observer = new MutationObserver((mutationsList) => {
+	const observer = new MutationObserver(async (mutationsList) => {
 		for (const mutation of mutationsList) {
 			if (mutation.type === 'childList') {
 				const element = document.querySelector(target);
 				if (element) {
-					onElementFound(element);
+					await onElementFound(element);
 				}
 			}
 		}

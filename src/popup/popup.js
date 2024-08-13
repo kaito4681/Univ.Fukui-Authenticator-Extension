@@ -3,7 +3,7 @@ import { TOTP } from "totp-generator";
 // クリップボードにコピー
 document.getElementById("copy").addEventListener("click", async () => {
 	// パスワード生成
-	const result = await chrome.storage.sync.get(["key"])
+	const result = await chrome.storage.sync.get(["key"]);
 	const key = result.key;
 	const message = document.getElementById("message");
 	if (key === undefined) {

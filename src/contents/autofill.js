@@ -9,6 +9,7 @@ const target = 'input#idToken1[placeholder="ワンタイムパスワードの入
 let key;
 chrome.storage.sync.get(["key"]).then((result) => {
 	key = result.key;
+	if (key === undefined) return;
 
 	// 要素が表示されたら実行する関数
 	const onElementFound = (element) => {

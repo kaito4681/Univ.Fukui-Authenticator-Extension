@@ -1,47 +1,28 @@
 import { TOTP } from "totp-generator";
 
 // クリップボードにコピー
-document.getElementById("copy").addEventListener("click", () => {
+document.getElementById("copy").addEventListener("click", async () => {
 	// パスワード生成
-	let key;
-	chrome.storage.sync.get(["key"]).then((result) => {
-		key = result.key;
-		const password = TOTP.generate(key).otp;
-
-		// クリップボードに書き込み -> 3秒間メッセージを表示
-		const message = document.getElementById("message");
-		navigator.clipboard.writeText(password).then(function () {
+	const result = await chrome.storage.sync.get(["key"])
+	const key = result.key;
+	const message = document.getElementById("message");
+	if (key === undefined) {
+		message.textContent = "keyが登録されていません。";
+	} else {
+		try {
+			const password = TOTP.generate(key).otp;
+			// クリップボードに書き込み 
+			await navigator.clipboard.writeText(password);
 			message.textContent = "クリップボードにコピーしました。";
-		}).catch(function (err) {
-			message.textContent = "エラーが発生しました。もう一度試してくだい";
-		});
-		message.classList.remove("hidden");
-		setTimeout(() => {
-			message.classList.add("hidden");
-		}, 3000);
-	});
-});
-
-// 
-document.getElementById("copy").addEventListener("click", () => {
-	// パスワード生成
-	let key;
-	chrome.storage.sync.get(["key"]).then((result) => {
-		key = result.key;
-		const password = TOTP.generate(key).otp;
-
-		// クリップボードに書き込み -> 3秒間メッセージを表示
-		const message = document.getElementById("message");
-		navigator.clipboard.writeText(password).then(function () {
-			message.textContent = "クリップボードにコピーしました。";
-		}).catch(function (err) {
-			message.textContent = "エラーが発生しました。もう一度試してくだい";
-		});
-		message.classList.remove("hidden");
-		setTimeout(() => {
-			message.classList.add("hidden");
-		}, 3000);
-	});
+		} catch (err) {
+			message.textContent = "エラーが発生しました。もう一度試してください。";
+		}
+	}
+	// 3秒間メッセージを表示
+	message.classList.remove("hidden");
+	setTimeout(() => {
+		message.classList.add("hidden");
+	}, 3000);
 });
 
 //生成キーの再設定画面へ遷移

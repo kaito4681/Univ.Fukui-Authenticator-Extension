@@ -16,16 +16,17 @@ async function getTOTP(key) {
 	return totp.otp;
 }
 
-
-
-const target = 'input#idToken1[placeholder="ワンタイムパスワードの入力"]';
-let key;
-chrome.storage.sync.get(["key"]).then((result) => {
-	key = result.key;
-	if (key === undefined) return;
+async function autofill() {
+	const target = 'input#idToken1[placeholder="ワンタイムパスワードの入力"]';
 
 	// 要素が表示されたら実行する関数
 	const onElementFound = async (element) => {
+		let key;
+		chrome.storage.sync.get(["key"]).then((result) => {
+			key = result.key;
+		});
+		if (key === undefined) return;
+
 		element.value = await getTOTP(key);
 		const button = document.getElementById("idToken2_0");
 		if (button) button.click();
@@ -37,7 +38,6 @@ chrome.storage.sync.get(["key"]).then((result) => {
 			if (mutation.type === 'childList') {
 				const element = document.querySelector(target);
 				if (element) {
-					observer.disconnect();
 					onElementFound(element);
 				}
 			}
@@ -46,4 +46,6 @@ chrome.storage.sync.get(["key"]).then((result) => {
 
 	// 監視を開始する
 	observer.observe(document.body, { childList: true, subtree: true });
-});
+}
+
+autofill();

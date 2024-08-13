@@ -25,10 +25,18 @@ document.getElementById("copy").addEventListener("click", async () => {
 	}, 3000);
 });
 
+// 説明画面へ遷移
+document.getElementById("how").addEventListener("click", () => {
+	chrome.tabs.create({
+		url: chrome.runtime.getURL("../instruction/instruction.html"),
+		active: true
+	});
+});
+
 //生成キーの再設定画面へ遷移
 document.getElementById("reset").addEventListener("click", () => {
 	chrome.tabs.create({
-		url: chrome.runtime.getURL("reset/reset.html"),
+		url: chrome.runtime.getURL("../reset/reset.html"),
 		active: true
 	});
 });
@@ -36,7 +44,7 @@ document.getElementById("reset").addEventListener("click", () => {
 //設定画面へ遷移
 document.getElementById("setting").addEventListener("click", () => {
 	chrome.tabs.create({
-		url: chrome.runtime.getURL("setting/setting.html"),
+		url: chrome.runtime.getURL("../setting/setting.html"),
 		active: true
 	});
 });

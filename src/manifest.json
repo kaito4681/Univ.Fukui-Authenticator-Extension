@@ -18,7 +18,9 @@
 				"https://ufsso.cii.u-fukui.ac.jp/openam/XUI/*"
 			],
 			"js": [
-				"contents/autofill.js"
+				"contents/autofill.js",
+				"contents/autoAgree.js",
+				"contents/registerKey.js"
 			],
 			"run_at": "document_end"
 		},

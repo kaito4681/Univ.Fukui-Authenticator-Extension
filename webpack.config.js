@@ -5,6 +5,7 @@ module.exports = {
 	mode: 'production',
 	entry: {
 		autofill: './src/contents/autofill.js',
+		registerKey: './src/contents/registerKey.js',
 		popup: './src/popup/popup.js'
 	},
 	output: {

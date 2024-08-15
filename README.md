@@ -1,6 +1,9 @@
 # 福井大学専用　Authenticator
 
-※非公式です。  
+## インストール方法
+Chrome ウェブストア（インストールは[こちら](https://chromewebstore.google.com/detail/%E7%A6%8F%E4%BA%95%E5%A4%A7%E5%AD%A6%E5%AD%A6%E7%94%9F%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB%E7%94%A8authenticator/agbeddljnfggabajkjfamdfcelkmlanc?authuser=0&hl=ja))
+
+
 
 ## ビルド方法
 npm i  

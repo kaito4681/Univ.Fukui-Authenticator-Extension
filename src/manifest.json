@@ -1,14 +1,11 @@
 {
 	"manifest_version": 3,
-	"name": "福井大学専用Authenticator(非公式)",
+	"name": "福井大学学生ポータル用Authenticator",
 	"description": "福井大学の学生ポータルのログインの際に、ワンタイムパスワードを自動入力する拡張機能です。",
 	"version": "1.0",
 	"permissions": [
-		"activeTab",
-		"scripting",
 		"storage",
-		"clipboardWrite",
-		"tabs"
+		"clipboardWrite"
 	],
 	"action": {
 		"default_popup": "./popup/popup.html"

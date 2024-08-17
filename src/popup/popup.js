@@ -44,14 +44,14 @@ document.getElementById("setting").addEventListener("click", () => {
 //GitHubを新規タブで開く
 document.getElementById("about").addEventListener("click", () => {
 	chrome.tabs.create({
-		url: "https://github.com/kaito4681/Univ.Fukui-Autonicator",
+		url: "https://github.com/kaito4681/Univ.Fukui-Authenticator-Extension",
 		active: true
 	});
 });
 //GitHubのissueを新規タブで開く
 document.getElementById("feedback").addEventListener("click", () => {
 	chrome.tabs.create({
-		url: "https://github.com/kaito4681/Univ.Fukui-Autonicator/issues",
+		url: "https://github.com/kaito4681/Univ.Fukui-Authenticator-Extension/issues",
 		active: true
 	});
 });

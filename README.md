@@ -6,8 +6,11 @@ Chrome ウェブストア（インストールは[こちら](https://chromewebst
 
 
 ## ビルド方法
-npm i  
-npx webpack  
+```bash
+   npm i  
+   npx webpack  
+```
+
 
 上のコマンドを実行後、distディレクトリを拡張機能として読み込む。
 

@@ -1,4 +1,5 @@
 import { TOTP } from "totp-generator";
+import packageJson from "../../package.json";
 
 // クリップボードにコピー
 document.getElementById("copy").addEventListener("click", async () => {
@@ -44,14 +45,14 @@ document.getElementById("setting").addEventListener("click", () => {
 //GitHubを新規タブで開く
 document.getElementById("about").addEventListener("click", () => {
 	chrome.tabs.create({
-		url: "https://github.com/kaito4681/Univ.Fukui-Authenticator-Extension",
+		url: packageJson.repository.url,
 		active: true
 	});
 });
 //GitHubのissueを新規タブで開く
 document.getElementById("feedback").addEventListener("click", () => {
 	chrome.tabs.create({
-		url: "https://github.com/kaito4681/Univ.Fukui-Authenticator-Extension/issues",
+		url: packageJson.bugs.url,
 		active: true
 	});
 });

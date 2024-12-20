@@ -25,7 +25,8 @@
 		},
 		{
 			"matches": [
-				"https://ufidp-t.cii.u-fukui.ac.jp/idp/profile/SAML2/*"
+				"https://ufidp-t.cii.u-fukui.ac.jp/idp/profile/SAML2/*",
+				"https://ufidp.cii.u-fukui.ac.jp/idp/profile/SAML2/Redirect/SSO*"
 			],
 			"js": [
 				"contents/autoAgree.js"

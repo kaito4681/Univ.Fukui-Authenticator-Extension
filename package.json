@@ -2,20 +2,31 @@
 	"name": "univ.fukui-authenticator-extension",
 	"version": "1.0.2",
 	"description": "福井大学学生ポータル用Authenticator(Chrome extension)",
-	"main": "webpack.config.js",
+	"main": "webpack.config.cjs",
 	"dependencies": {
+		"core-js": "^3.39.0",
+		"totp-generator": "^1.0.0"
+	},
+	"devDependencies": {
 		"@babel/core": "^7.26.0",
 		"@babel/preset-env": "^7.26.0",
 		"babel-loader": "^9.2.1",
 		"copy-webpack-plugin": "^12.0.2",
-		"core-js": "^3.39.0",
-		"totp-generator": "^1.0.0",
 		"webpack": "^5.97.1",
-		"webpack-cli": "^5.1.4"
+		"webpack-cli": "^5.1.4",
+		"eslint": "^9.30.1",
+		"eslint-config-prettier": "^10.1.5",
+		"eslint-plugin-prettier": "^5.5.1",
+		"husky": "^9.1.7",
+		"prettier": "^3.6.2"
 	},
 	"scripts": {
-		"build": "npx webpack"
+		"build": "npx webpack",
+		"lint": "eslint .",
+		"format": "prettier --write .",
+		"prepare": "husky install"
 	},
+	"type": "module",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/kaito4681/Univ.Fukui-Authenticator-Extension.git"

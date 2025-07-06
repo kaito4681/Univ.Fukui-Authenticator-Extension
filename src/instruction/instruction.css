@@ -1,81 +1,81 @@
 /* instruction.css */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  margin: 0;
-  padding: 20px;
-  line-height: 1.6;
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4;
+	color: #333;
+	margin: 0;
+	padding: 20px;
+	line-height: 1.6;
 }
 
 h1 {
-  text-align: center;
-  color:  #2196F3;
-  margin-bottom: 20px;
+	text-align: center;
+	color: #2196f3;
+	margin-bottom: 20px;
 }
 
 h2 {
-  color: #333;
-  border-bottom: 2px solid  #2196F3;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
+	color: #333;
+	border-bottom: 2px solid #2196f3;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
 }
 
 h3 {
-  color: #555;
-  margin-top: 20px;
+	color: #555;
+	margin-top: 20px;
 }
 
 a {
-  color:  #2196F3;
-  text-decoration: none;
+	color: #2196f3;
+	text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
 p {
-  margin: 10px 0;
+	margin: 10px 0;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 10px 0;
+	max-width: 100%;
+	height: auto;
+	border: 1px solid #ddd;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	margin: 10px 0;
 }
 
 div {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 @media (max-width: 768px) {
-  body {
-    padding: 10px;
-  }
+	body {
+		padding: 10px;
+	}
 
-  div {
-    padding: 15px;
-  }
+	div {
+		padding: 15px;
+	}
 
-  h1 {
-    font-size: 24px;
-  }
+	h1 {
+		font-size: 24px;
+	}
 
-  h2 {
-    font-size: 20px;
-  }
+	h2 {
+		font-size: 20px;
+	}
 
-  h3 {
-    font-size: 18px;
-  }
+	h3 {
+		font-size: 18px;
+	}
 }

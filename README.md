@@ -48,7 +48,3 @@ xcrun safari-web-extension-converter dist --app-name safari
 ### key がすでに分かっている場合
 
 - 拡張機能のアイコンをクリックし、「設定」ボタンをクリックすると、入力画面になります。
-
-```
-
-```

@@ -65,7 +65,7 @@ module.exports = {
 				{
 					from: path.resolve(__dirname, 'src/contents/autoAgree.js'),
 					to: path.resolve(__dirname, 'dist/contents/'),
-				}
+				},
 			],
 		}),
 	],

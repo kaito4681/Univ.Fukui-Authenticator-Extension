@@ -1,6 +1,6 @@
 {
 	"name": "univ.fukui-authenticator-extension",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "福井大学学生ポータル用Authenticator(Chrome extension)",
 	"main": "webpack.config.cjs",
 	"dependencies": {

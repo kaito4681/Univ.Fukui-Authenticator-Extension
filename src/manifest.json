@@ -2,7 +2,7 @@
 	"manifest_version": 3,
 	"name": "福井大学 学生ポータル用 Authenticator",
 	"description": "福井大学の学生ポータルのログインの際に、ワンタイムパスワードを自動入力する拡張機能です。",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"permissions": ["storage", "clipboardWrite"],
 	"action": {
 		"default_popup": "./popup/popup.html"

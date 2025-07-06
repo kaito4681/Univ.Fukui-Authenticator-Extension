@@ -3,18 +3,13 @@
 	"name": "福井大学 学生ポータル用 Authenticator",
 	"description": "福井大学の学生ポータルのログインの際に、ワンタイムパスワードを自動入力する拡張機能です。",
 	"version": "1.0.2",
-	"permissions": [
-		"storage",
-		"clipboardWrite"
-	],
+	"permissions": ["storage", "clipboardWrite"],
 	"action": {
 		"default_popup": "./popup/popup.html"
 	},
 	"content_scripts": [
 		{
-			"matches": [
-				"https://ufsso.cii.u-fukui.ac.jp/openam/XUI/*"
-			],
+			"matches": ["https://ufsso.cii.u-fukui.ac.jp/openam/XUI/*"],
 			"js": [
 				"contents/autofill.js",
 				"contents/autoAgree.js",
@@ -28,9 +23,7 @@
 				"https://ufidp-t.cii.u-fukui.ac.jp/idp/profile/SAML2/*",
 				"https://ufidp.cii.u-fukui.ac.jp/idp/profile/SAML2/Redirect/SSO*"
 			],
-			"js": [
-				"contents/autoAgree.js"
-			],
+			"js": ["contents/autoAgree.js"],
 			"run_at": "document_end"
 		}
 	],

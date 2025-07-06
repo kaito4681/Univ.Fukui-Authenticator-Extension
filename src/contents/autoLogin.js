@@ -1,11 +1,11 @@
 //
 // autoLogin.js
 // ログインボタンを自動でクリックする。
-// 
+//
 const PASSWORD_INPUT_TIME = 3000; // 0.3秒
 
 async function checkAutoLogin() {
-	const result = await chrome.storage.sync.get(["autoLogin"]);
+	const result = await chrome.storage.sync.get(['autoLogin']);
 	const auto = result.autoLogin;
 	if (auto === true) {
 		return true;
@@ -21,25 +21,24 @@ async function autoLogin() {
 		const event = new MouseEvent('click', {
 			bubbles: true,
 			cancelable: true,
-			view: window
+			view: window,
 		});
 		element.dispatchEvent(event);
 	}
 
 	// 要素が表示されたら実行する関数
 	const onElementFound = async (element) => {
-		console.log("prees-brfore");
+		console.log('prees-brfore');
 		autoLoginEnable = await checkAutoLogin();
 		console.log(autoLoginEnable);
-		document.querySelector("input").click();
+		document.querySelector('input').click();
 
 		if (autoLoginEnable === true) {
 			setTimeout(() => {
-				console.log("prees-after");
+				console.log('prees-after');
 				// element.focus();
 				// element.click();
 				triggerClick(element);
-
 			}, PASSWORD_INPUT_TIME);
 		}
 	};
@@ -60,6 +59,5 @@ async function autoLogin() {
 	observer.observe(document.body, { childList: true, subtree: true });
 }
 
-
-console.log("a");
+console.log('a');
 autoLogin();

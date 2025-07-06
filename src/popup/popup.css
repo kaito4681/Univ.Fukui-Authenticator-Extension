@@ -1,39 +1,39 @@
 * {
-  font-size: 14px;
+	font-size: 14px;
 }
 
 button {
-  width: 200px;
-  height: 30px;
-  border-radius: 10px;
-  border: 1px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 3px;
-  color: black;
-  background-color: #eeeeee;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+	width: 200px;
+	height: 30px;
+	border-radius: 10px;
+	border: 1px solid black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin: 3px;
+	color: black;
+	background-color: #eeeeee;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
 }
 
 button:hover {
-  background-color: #f0f0f0;
+	background-color: #f0f0f0;
 }
 
 #message {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px 20px;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  border-radius: 5px;
-  z-index: 1;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 10px 20px;
+	background-color: rgba(0, 0, 0, 0.7);
+	color: #fff;
+	border-radius: 5px;
+	z-index: 1;
 }
 
 .hidden {
-  display: none;
+	display: none;
 }

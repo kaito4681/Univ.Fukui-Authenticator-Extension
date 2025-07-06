@@ -2,7 +2,7 @@
 document.getElementById('textButton').addEventListener('click', () => {
 	const textInput = document.getElementById('textInput');
 	const message = document.getElementById('message');
-	key = textInput.value;
+	const key = textInput.value;
 	if (key !== '') {
 		chrome.storage.sync.set({ key: key }, () => {
 			if (chrome.runtime.lastError) {

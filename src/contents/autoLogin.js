@@ -28,16 +28,14 @@ async function autoLogin() {
 
 	// 要素が表示されたら実行する関数
 	const onElementFound = async (element) => {
-		console.log('prees-brfore');
-		autoLoginEnable = await checkAutoLogin();
+		console.log('press-before');
+		const autoLoginEnable = await checkAutoLogin();
 		console.log(autoLoginEnable);
 		document.querySelector('input').click();
 
 		if (autoLoginEnable === true) {
 			setTimeout(() => {
-				console.log('prees-after');
-				// element.focus();
-				// element.click();
+				console.log('press-after');
 				triggerClick(element);
 			}, PASSWORD_INPUT_TIME);
 		}
@@ -59,5 +57,4 @@ async function autoLogin() {
 	observer.observe(document.body, { childList: true, subtree: true });
 }
 
-console.log('a');
 autoLogin();

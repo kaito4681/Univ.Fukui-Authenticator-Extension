@@ -13,8 +13,7 @@
 			"js": [
 				"contents/autofill.js",
 				"contents/autoAgree.js",
-				"contents/registerKey.js",
-				"contents/autoLogin.js"
+				"contents/registerKey.js"
 			],
 			"run_at": "document_end"
 		},

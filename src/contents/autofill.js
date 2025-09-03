@@ -16,6 +16,8 @@ async function getTOTP(key) {
 	return totp.otp;
 }
 
+let alerted = false; // アラート表示済みフラグ
+
 async function autofill() {
 	const target = 'input#idToken1[placeholder="ワンタイムパスワードの入力"]';
 
@@ -27,9 +29,10 @@ async function autofill() {
 		console.log(key);
 
 		if (key === undefined) {
-			alert(
-				'キーが設定されていません。\n【福井大学専用Authenticator(非公式)】',
-			);
+			if (!alerted) {
+				alert('キーが設定されていません。\n【福井大学専用Authenticator】');
+				alerted = true;
+			}
 			return;
 		}
 
@@ -44,6 +47,7 @@ async function autofill() {
 			if (mutation.type === 'childList') {
 				const element = document.querySelector(target);
 				if (element) {
+					observer.disconnect(); // 監視を停止
 					await onElementFound(element);
 				}
 			}
